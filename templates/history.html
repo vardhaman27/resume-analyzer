@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Report History</h1>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr>
+                <th>Filename</th>
+                <th>Score</th>
+                <th>Matched</th>
+                <th>Missing</th>
+                <th>Date</th>
+            </tr>
+            {% for report in reports %}
+            <tr>
+                <td>{{ report[1] }}</td>
+                <td>{{ report[2] }}%</td>
+                <td>{{ report[3] }}</td>
+                <td>{{ report[4] }}</td>
+                <td>{{ report[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/">Check another resume</a>
+    </div>
+</body>
+</html>

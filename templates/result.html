@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Score: {{ score }}%</h1>
+        <p>Email: {{ email }}</p>
+        <p>Phone: {{ phone }}</p>
+        <p>LinkedIn: {{ linkedin }}</p>
+        <p>GitHub: {{ github }}</p>
+        <h2>Education</h2>
+        <ul>
+            {% for line in education %}
+                <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Experience</h2>
+        <ul>
+            {% for line in experience %}
+                <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Matched Skills</h2>
+        <ul class="matched">
+            {% for skill in matched %}
+                <li>✓ {{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Missing Skills</h2>
+        <ul class="missing">
+            {% for skill in missing %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Recommendations</h2>
+        <ul class="recommendations">
+            {% for rec in recommendations %}
+                <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">Try another resume</a>
+    </div>
+</body>
+</html>
