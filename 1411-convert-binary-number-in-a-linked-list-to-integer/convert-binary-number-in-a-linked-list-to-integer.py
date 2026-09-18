@@ -5,10 +5,9 @@
 #         self.next = next
 class Solution(object):
     def getDecimalValue(self, head):
-        curr = head
         s = ""
-        while curr:
-            s += str(curr.val)
-            curr = curr.next
+        while head:
+            s += str(head.val)
+            head = head.next
         return int(s, 2)
             
