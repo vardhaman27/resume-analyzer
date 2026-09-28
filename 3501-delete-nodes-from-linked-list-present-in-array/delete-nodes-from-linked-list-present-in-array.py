@@ -6,7 +6,7 @@
 class Solution(object):
     def modifiedList(self, nums, head):
         nums = set(nums)
-        while head and head.val in nums:
+        while head is not None and head.val in nums:
             head = head.next
         curr = head
         while curr and curr.next:
